@@ -1,6 +1,6 @@
 "use strict";
 angular.module("myApp", ['ngResource']);
-angular.module("myApp").factory('User', function($http){
+angular.module("myApp").factory('User', function($resource){
     var url = "https://jsonplaceholder.typicode.com/posts";
     return $resource(url, {id:'@id'});
 });
@@ -21,11 +21,14 @@ angular.module("myApp").controller("mainCtrl",['User', function(User){
     };
     vm.deleteUser = function(id){
        vm.users = User.delete({id:id});
+       vm.getUsers();
     };
     vm.addUser = function(){
         var usr = new User({userId: vm.userId, title: vm.title, body:vm.body});
-       usr.$save(function(newUser, responseHeader){
+        usr.$save(function(newUser, responseHeader){
            vm.selectedUser = newUser;
-       })
+           vm.getUsers();
+       });
     };
+    vm.getUsers();
 }]);
