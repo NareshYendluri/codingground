@@ -1,0 +1,13 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="httpService.js"></script>
+  </head>
+  <body>
+    <div ng-controller="mainCtrl as main">
+        <p><button type="button" ng-click="main.service.getStates()">Get Countries</button></p>
+        <p ng-repeat="state in main.service.states">{{state.name}} : {{state.alpha2Code}}</p>
+    </div>
+  </body>
+</html>
