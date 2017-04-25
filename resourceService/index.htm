@@ -20,7 +20,32 @@ border: 1px solid #999999;
   </head>
   <body>
     <div ng-controller="mainCtrl as main">
-      
+      <div>
+          <p>Add User:</p>
+          <p>User Id: <input type="text" ng-model="main.userId"></p>
+          <p>Title: <input type="text" ng-model="main.title"></p>
+          <p>Body: <input type="text" ng-model="main.body"></p>
+          <p><button type="button" ng-click="main.addUser()">Add User</button></p>
+            <div>
+                <p><b>Selected User:</b></p>
+                <p>Id: {{main.selectedUser.id}}</p>
+                <p>User Id: {{main.selectedUser.userId}}</p>
+                <p>Title: {{main.selectedUser.title}}</p>
+                <p>Body: {{main.selectedUser.body}}</p>
+            </div>
+      </div>
+      <hr/>
+      <div>
+          <p>All Users:</p>
+          <div ng-repeat="user in main.users | orderBy : '-id'">
+              <p><b>Id:</b> {{user.id}}</p>
+              <p><b>User Id:</b> {{user.userId}}</p>
+              <p><b>Title:</b> {{user.title}}</p>
+              <p><b>Body:</b> {{user.body}}</p>
+          </div>
+      </div>
     </div>
+    
   </body>
 </html>
+
