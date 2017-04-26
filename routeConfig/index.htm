@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div>
+      <a href="#/welcome">Welcome</a>
+      <a href="#/about">About</a>
+      <a href="#/contact">Contact Us</a>
+    </div>
+    <div>
+        <ng-view></ng-view>
+    </div>
+  </body>
+</html>
