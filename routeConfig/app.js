@@ -3,7 +3,7 @@ angular.module("myApp", ['ngRoute']);
 angular.module("myApp").config(['$routeProvider', function($routeProvider){
     $routeProvider
     .when("/welcome", {
-      templateUrl: "views/welocme.html",
+      templateUrl: "views/welcome.html",
       controller: "WelcomeCtrl",
       controllerAs: "vm"
     })
