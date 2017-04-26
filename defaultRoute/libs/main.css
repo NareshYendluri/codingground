@@ -1,0 +1,11 @@
+div  {
+border:1px solid #d3d3d3;
+margin: 15px;
+}
+
+.roll-over {
+width: 1000px;
+height: 10000px;
+background-color: #eeeeee;
+border: 1px solid #999999;
+}
